@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src="menu.js"></script>
+    <script>
+        window.onload = function () {
+            var menuItem1 = new MenuItem('/', 'Главная');
+            var menuItem2 = new MenuItem('/about', 'О нас');
+            var menuItem3 = new MenuItem('/catalog', 'Каталог');
+
+            var menu = new Menu('menu', 'menu', [
+                menuItem1, menuItem2, menuItem3
+            ]);
+
+            document.body.appendChild(menu.render());
+
+            var menuItem1 = new MenuItem('/', 'Главная');
+            var menuItem2 = new MenuItem('/about', 'О нас');
+            var menuItem3 = new MenuItem('/catalog', 'Каталог');
+            var menuItem4 = new MenuItem('/catalog1', 'Каталог1');
+
+            var menu = new Menu('menu', 'menu', [
+                menuItem1, menuItem2, menuItem3
+            ]);
+
+            var superMenu = new SuperMenu('superMenu', 'superMenu', [menu, menuItem4])
+
+            document.body.appendChild(superMenu.render());
+
+            setTimeout(function () {
+                menuItem2.remove()
+            }, 3000)
+        }
+    </script>
+</head>
+<body></body>
+</html>
